@@ -1,0 +1,7 @@
+asgiref @ file:///home/conda/feedstock_root/build_artifacts/asgiref_1617745359837/work
+certifi==2020.12.5
+Django @ file:///home/conda/feedstock_root/build_artifacts/django_1617829946528/work
+pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1612179539967/work
+sqlparse @ file:///home/conda/feedstock_root/build_artifacts/sqlparse_1602142927465/work
+typing-extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1602702424206/work
+wincertstore==0.2
