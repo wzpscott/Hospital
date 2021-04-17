@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>挂号界面</title>
+    <title>挂号</title>
 </head>
 <body>
-<h1>请挂号</h1>
+<h1>挂号页</h1>
+    {% if message %}
+           <div class="alert alert-warning">{{ message }}</div>
+    {% endif %}
+    <ul>
+    {% for key, value in dic.items %}
+        <li>{{ key }}
+        {% for doc in value %}
+            <ul>
+                <li>{{ doc.name }}  剩余号数:{{ doc.num }}
+                    <form action="/patientIndex/registration" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="did" value={{ doc.doctorID }}>
+                    <input type="submit"  value="挂号">
+                    </form>
+                </li>
+            </ul>
+       {% endfor %}
+        </li>
+    {% endfor %}
+    </ul>
+
 </body>
 </html>

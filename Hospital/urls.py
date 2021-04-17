@@ -19,10 +19,22 @@ from HMIS import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index),
+    path('', views.start),
+
     path('login/', views.login),
-    path('register/', views.register),
     path('logout/', views.logout),
-    path('index/registration/', views.registration),
-    path('index/reimbursement/', views.reimbursement),
+
+    path('patientLogin/', views.patientLogin),
+    path('patientRegister/', views.patientRegister),
+    path('patientIndex/', views.patientIndex),
+    path('patientIndex/info', views.patientInfo),
+    path('patientIndex/registration', views.registration),
+
+    path('doctorLogin/', views.doctorLogin),
+    path('doctorRegister/', views.doctorRegister),
+    path('doctorIndex/', views.doctorIndex),
+    path('doctorIndex/info', views.doctorInfo),
+    path('doctorIndex/registrationRecord', views.registrationRecord),
+
+    path('doctorIndex/treatment', views.treatment),
 ]

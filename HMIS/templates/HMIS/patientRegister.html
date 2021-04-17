@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>患者注册页</title>
+</head>
+<body>
+<h1>这是患者注册页</h1>
+<form action="/patientRegister/" method="post">
+       {% csrf_token %}
+       {% if message %}
+           <div class="alert alert-warning">{{ message }}</div>
+       {% endif %}
+        <p>
+            <label for="id_pid">编号（待修改）：</label>
+            <input type="text" id="id_pid" name="pid" placeholder="患者编号" autofocus required />
+        </p>
+        <p>
+            <label for="id_name">姓名：</label>
+            <input type="text" id="id_pname" name="pname" placeholder="患者姓名" autofocus required />
+        </p>
+        <p>
+            <label for="id_password">密码：</label>
+            <input type="password" id="id_password" placeholder="密码" name="password1" required >
+        </p>
+        <p>
+            <label for="id_password">重复密码：</label>
+            <input type="password" id="id_password" placeholder="密码" name="password2" required >
+        </p>
+        <input type="submit" value="确定">
+</body>
+</html>

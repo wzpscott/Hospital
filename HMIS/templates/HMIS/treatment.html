@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>诊疗界面</title>
+</head>
+<body>
+<h1>诊疗界面</h1>
+<table border="1">
+    <tr>
+        <th>挂号ID</th>
+        <td>{{ record.id }}</td>
+    </tr>
+    <tr>
+        <th>患者ID</th>
+        <td>{{ record.patient.patientID }}</td>
+    </tr>
+    <tr>
+        <th>患者姓名</th>
+        <td>{{ record.patient.name }}</td>
+    </tr>
+    <tr>
+        <th>医生ID</th>
+        <td>{{ record.doctor.doctorID }}</td>
+    </tr>
+    <tr>
+        <th>医生姓名</th>
+        <td>{{ record.doctor.name}}</td>
+    </tr>
+    <tr>
+        <th>诊断结果</th>
+        <td>
+            <form action="" method="post">{% csrf_token %}
+            <textarea name="diagnosis" style="width:500px;height:350px;"></textarea>
+            <br>
+            <input type="submit"  value="提交">
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

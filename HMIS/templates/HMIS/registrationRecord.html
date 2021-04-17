@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>挂号记录</title>
+</head>
+<body>
+<h1>{{ doctor.name }}的挂号记录</h1>
+<table border="1">
+    <th>患者ID</th>
+    <th>患者姓名</th>
+    <th>挂号时间</th>
+    <th>结果诊断</th>
+    {% for rec in records%}
+    <tr>
+        <td>{{ rec.patient.patientID }}</td>
+        <td>{{ rec.patient.name }}</td>
+        <td>{{ rec.regTime }}</td>
+        {% if rec.isActive == True%}
+            <td><form action="" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value={{ rec.id }}>
+                    <input type="submit"  value="去诊断">
+                    </form>
+            </td>
+        {% else %}
+            <td>
+            <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value={{ rec.id }}>
+                    <input type="submit"  value="去诊断">
+            </form>
+            </td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
